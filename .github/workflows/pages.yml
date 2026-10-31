@@ -24,6 +24,7 @@ jobs:
           node scripts/check-content.mjs
           node scripts/check-lectures.mjs
           node scripts/check-readings.mjs
+          node scripts/check-handbook.mjs
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:

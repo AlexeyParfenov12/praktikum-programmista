@@ -6,6 +6,7 @@ import assert from 'node:assert/strict';
 const server=await createServer({server:{middlewareMode:true},appType:'custom'});
 try{
  const {ReadingLecture}=await server.ssrLoadModule('/src/ReadingLecture.tsx');
+ const {SiteNav}=await server.ssrLoadModule('/src/SiteNav.tsx');
  const {documents}=await server.ssrLoadModule('/src/data.ts');
  const {buildReading,isCode,isTask,isHeading}=await server.ssrLoadModule('/src/reading-content.ts');
  const {taskHelp}=await server.ssrLoadModule('/src/task-help.ts');
@@ -16,7 +17,17 @@ try{
   const original=documents.find(d=>d.id===id).paragraphs;
   const blocks=buildReading(id),texts=blocks.filter(b=>b.kind==='text');
   assert.deepEqual(texts.map(b=>b.index),original.flatMap((t,i)=>i>0&&t!=='@@SKIP'?[i]:[]),`Order or coverage changed in ${id}`);
-  const html=renderToString(React.createElement(ReadingLecture,{id,completed:false,onComplete(){},onOpen(){}}));
+  const html=renderToString(React.createElement(ReadingLecture,{id}));
+  const menuHtml=renderToString(React.createElement(SiteNav,{current:'/lesson/'+id}));
+  assert(html.includes(menuHtml),`Shared SiteNav is missing or differs in ${id}`);
+  assert.equal((html.match(/class="site-nav"/g)||[]).length,1,`Expected one shared menu in ${id}`);
+  assert(menuHtml.includes('aria-label="Главное меню"'),`Menu landmark missing in ${id}`);
+  for(const path of ['#/','#/catalog','#/glossary','#/help'])assert(menuHtml.includes(`href="${path}"`),`Menu link ${path} missing in ${id}`);
+  assert(menuHtml.includes('aria-controls="site-menu"'),`Mobile menu control missing in ${id}`);
+  assert(menuHtml.includes('href="#/catalog" aria-current="page"'),`Practical works menu item is not active in ${id}`);
+  assert(!/class="[^"]*\bplain-(?:complete|storage-error)\b/.test(html),`Progress/completion block remains in ${id}`);
+  assert(!html.includes('Мой прогресс')&&!html.includes('Браузер не разрешил сохранить прогресс')&&!html.includes('Отметка сохранена в этом браузере.'),`Progress UI remains in ${id}`);
+  for(const button of html.matchAll(/<button\b[^>]*>([\s\S]*?)<\/button>/g))assert(!/заверш|отмет|пройден|выполнен|прогресс/i.test(button[1].replace(/<[^>]*>/g,'')),`Completion/progress button remains in ${id}`);
   assert(html.includes('plain-article'));assert(!html.includes('worklayout'));assert(!html.includes('Карта работы'));assert(!html.includes('@@TABLE:'));assert(!html.includes('@@SKIP'));
   assert(html.includes('reading-code'),`No formatted code in ${id}`);assert(html.includes('Показать пример кода к заданию'),`No optional example in ${id}`);
   const help=blocks.filter(b=>b.kind==='task-help');helpCount+=help.length;
@@ -40,9 +51,8 @@ try{
  assert.equal(await copyCode('sample'),false);
  assert.equal(await copyCode('sample',{writeText:async()=>{throw Error('Clipboard denied')}}),false);
  let copied='';assert.equal(await copyCode('int stock = 2;',{writeText:async t=>{copied=t}}),true);assert.equal(copied,'int stock = 2;');
- const storageHtml=renderToString(React.createElement(ReadingLecture,{id:1,completed:true,storageError:true,onComplete(){},onOpen(){}}));assert(storageHtml.includes('Браузер не разрешил сохранить прогресс'));assert(!storageHtml.includes('Отметка сохранена в этом браузере.'));
  const successfulAdd=taskHelp(15,'Задание А (обязательное).',0).code.replace(/\/\/[^\n]*/g,'');assert(!successfulAdd.includes('_products.Add('),'Add task example must not insert the same item twice');
  assert(!taskHelp(15,'Задание Б (обязательное).',1).code.includes('string name ='),'Do not redeclare existing name in the duplicate check');
  assert(!documents.some(d=>d.paragraphs.some(p=>p.includes('Знак = присваивает значение слева'))),'Incorrect assignment explanation remains');
- console.log(`16 flowing lectures verified: ${images} inline image placements, ${codeCount} original code blocks, ${helpCount} task examples.`);
+ console.log(`16 flowing lectures verified: shared menu everywhere, no progress/completion UI, ${images} inline image placements, ${codeCount} original code blocks, ${helpCount} task examples.`);
 }finally{await server.close();}
