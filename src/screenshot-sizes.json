@@ -1,0 +1,358 @@
+{
+  "add-class.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "button-added.jpg": {
+    "width": 1536,
+    "height": 816
+  },
+  "button-name.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "button-text.jpg": {
+    "width": 1536,
+    "height": 816
+  },
+  "click-event.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "designer-empty.jpg": {
+    "width": 1536,
+    "height": 816
+  },
+  "dotnet-version.jpg": {
+    "width": 1014,
+    "height": 675
+  },
+  "error-list.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "grid-columns.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "handler-empty.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-1-code.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-1-designer.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-1-reset.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-1-run-after.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-1-run-before.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-10-code.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-10-designer.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-10-run-after.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-10-run-before.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-11-code.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-11-designer.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-11-run-after.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-11-run-before.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-12-code.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-12-designer.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-12-run-after.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-12-run-before.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-13-code.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-13-designer.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-13-properties.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-13-run-after.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-13-run-before.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-14-code.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-14-designer.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-14-run-after.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-14-run-before.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-15-code.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-15-designer.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-15-run-after.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-15-run-before.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-16-designer.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-16-run-after.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-16-run-before.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-2-code.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-2-designer.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-2-properties.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-2-run-after.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-2-run-before.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-3-code.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-3-designer.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-3-properties.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-3-run-after.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-3-run-before.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-4-code.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-4-designer.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-4-no-discount.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-4-properties.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-4-run-after.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-4-run-before.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-5-code.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-5-designer.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-5-rejected.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-5-run-after.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-5-run-before.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-6-code.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-6-designer.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-6-rejected.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-6-run-after.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-6-run-before.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-7-code.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-7-designer.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-7-run-after.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-7-run-before.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-8-designer.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-8-run-after.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-8-run-before.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-9-code.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-9-designer.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "lesson-9-run-after.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "lesson-9-run-before.jpg": {
+    "width": 658,
+    "height": 479
+  },
+  "product-class.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "project-settings.jpg": {
+    "width": 1014,
+    "height": 675
+  },
+  "toolbox-button.jpg": {
+    "width": 1536,
+    "height": 816
+  },
+  "toolbox-combobox.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "toolbox-datagridview.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "toolbox-label.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "toolbox-listbox.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "toolbox-numericupdown.jpg": {
+    "width": 1525,
+    "height": 810
+  },
+  "toolbox-textbox.jpg": {
+    "width": 1525,
+    "height": 810
+  }
+}
