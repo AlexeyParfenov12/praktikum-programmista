@@ -1,0 +1,98 @@
+[
+  {
+    "lesson": 1,
+    "file": "start-01.zip",
+    "bytes": 2589,
+    "stage": 0
+  },
+  {
+    "lesson": 2,
+    "file": "start-02.zip",
+    "bytes": 2949,
+    "stage": 1
+  },
+  {
+    "lesson": 3,
+    "file": "start-03.zip",
+    "bytes": 3231,
+    "stage": 2
+  },
+  {
+    "lesson": 4,
+    "file": "start-04.zip",
+    "bytes": 3532,
+    "stage": 3
+  },
+  {
+    "lesson": 5,
+    "file": "start-05.zip",
+    "bytes": 3809,
+    "stage": 4
+  },
+  {
+    "lesson": 6,
+    "file": "start-06.zip",
+    "bytes": 4539,
+    "stage": 5
+  },
+  {
+    "lesson": 7,
+    "file": "start-07.zip",
+    "bytes": 4915,
+    "stage": 6
+  },
+  {
+    "lesson": 8,
+    "file": "start-08.zip",
+    "bytes": 5410,
+    "stage": 7
+  },
+  {
+    "lesson": 9,
+    "file": "start-09.zip",
+    "bytes": 5492,
+    "stage": 8
+  },
+  {
+    "lesson": 10,
+    "file": "start-10.zip",
+    "bytes": 6820,
+    "stage": 9
+  },
+  {
+    "lesson": 11,
+    "file": "start-11.zip",
+    "bytes": 6982,
+    "stage": 10
+  },
+  {
+    "lesson": 12,
+    "file": "start-12.zip",
+    "bytes": 7495,
+    "stage": 11
+  },
+  {
+    "lesson": 13,
+    "file": "start-13.zip",
+    "bytes": 7916,
+    "stage": 12
+  },
+  {
+    "lesson": 14,
+    "file": "start-14.zip",
+    "bytes": 8506,
+    "stage": 13
+  },
+  {
+    "lesson": 15,
+    "file": "start-15.zip",
+    "bytes": 9953,
+    "stage": 14
+  },
+  {
+    "lesson": 16,
+    "file": "start-16.zip",
+    "bytes": 10492,
+    "stage": 15
+  }
+]

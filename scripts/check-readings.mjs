@@ -22,12 +22,13 @@ try{
   assert(html.includes(menuHtml),`Shared SiteNav is missing or differs in ${id}`);
   assert.equal((html.match(/class="site-nav"/g)||[]).length,1,`Expected one shared menu in ${id}`);
   assert(menuHtml.includes('aria-label="Главное меню"'),`Menu landmark missing in ${id}`);
-  for(const path of ['#/','#/catalog','#/glossary','#/help'])assert(menuHtml.includes(`href="${path}"`),`Menu link ${path} missing in ${id}`);
+  for(const path of ['#/','#/catalog','#/glossary','#/downloads','#/help'])assert(menuHtml.includes(`href="${path}"`),`Menu link ${path} missing in ${id}`);
   assert(menuHtml.includes('aria-controls="site-menu"'),`Mobile menu control missing in ${id}`);
   assert(menuHtml.includes('href="#/catalog" aria-current="page"'),`Practical works menu item is not active in ${id}`);
   assert(!/class="[^"]*\bplain-(?:complete|storage-error)\b/.test(html),`Progress/completion block remains in ${id}`);
   assert(!html.includes('Мой прогресс')&&!html.includes('Браузер не разрешил сохранить прогресс')&&!html.includes('Отметка сохранена в этом браузере.'),`Progress UI remains in ${id}`);
   for(const button of html.matchAll(/<button\b[^>]*>([\s\S]*?)<\/button>/g))assert(!/заверш|отмет|пройден|выполнен|прогресс/i.test(button[1].replace(/<[^>]*>/g,'')),`Completion/progress button remains in ${id}`);
+  assert(html.includes('downloads/start-'+String(id).padStart(2,'0')+'.zip'),`No starter download in ${id}`);
   assert(html.includes('plain-article'));assert(!html.includes('worklayout'));assert(!html.includes('Карта работы'));assert(!html.includes('@@TABLE:'));assert(!html.includes('@@SKIP'));
   assert(html.includes('reading-code'),`No formatted code in ${id}`);assert(html.includes('Показать пример кода к заданию'),`No optional example in ${id}`);
   const help=blocks.filter(b=>b.kind==='task-help');helpCount+=help.length;

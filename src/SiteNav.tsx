@@ -1,7 +1,7 @@
 import {useEffect,useState} from 'react';
 import {Code2,Menu,X} from 'lucide-react';
 import './site-nav.css';
-const links=[['/','Обзор'],['/catalog','Практические'],['/glossary','Справочник'],['/help','Помощь']];
+const links=[['/','Обзор'],['/catalog','Практические'],['/glossary','Справочник'],['/downloads','Проекты'],['/help','Помощь']];
 export function SiteNav({current}:{current:string}){
  const [open,setOpen]=useState(false);
  useEffect(()=>{setOpen(false)},[current]);
