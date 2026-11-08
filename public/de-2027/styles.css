@@ -13,3 +13,10 @@
 .task-content .kim-letter p.kim-letter-signature{margin-top:12px}
 @media(max-width:700px){.kim-letter{font-size:11px;padding:8px}.kim-letter-sender,.kim-letter-recipient{padding:8px;font-size:10px}.kim-letter-greeting{margin-top:16px}.kim-letter-underline{min-width:105px}}
 @media print{.kim-letter{border:0;max-width:none;padding:0;margin:18px 0;break-inside:avoid}.kim-letter-header{min-height:210px}}
+
+/* Иллюстрация слайдера для учебных вариантов 39–48. */
+.slider-example-figure{margin:18px 0 24px;padding:14px;background:#eef4f5;border:1px solid #d8e4e7;border-radius:16px}
+.slider-example-figure img{display:block;width:100%;height:auto;max-width:740px;margin:0 auto;border-radius:12px}
+.slider-example-figure figcaption{font-size:13px;line-height:1.55;color:#405e66;margin:10px 6px 2px;text-align:center}
+.kim-demo-tip{font-size:13px;border-left:3px solid #368196;background:#eef6f8;padding:12px 14px;margin:15px 0}
+@media print{.slider-example-figure{break-inside:avoid}.kim-demo-tip{break-inside:avoid}}
