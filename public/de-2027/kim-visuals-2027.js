@@ -7,7 +7,7 @@ const data=window.DE_VARIANTS;
 if(!Array.isArray(data)) return;
 const mailMarker='<h3>Шаблон письма — расположение и текст как в «Образец Слияние_ОЗ.pdf»</h3>';
 const sliderMarker='<h3>МОДУЛЬ 2 · ПУНКТ 5. Мобильный слайдер</h3>';
-const sampleLetter=String.raw\`<h3>Шаблон уведомления для слияния — как в оригинальном образце КИМ-2027</h3>
+const sampleLetter=String.raw`<h3>Шаблон уведомления для слияния — как в оригинальном образце КИМ-2027</h3>
 <div class="kim-letter" aria-label="Официальный макет письма из образца КИМ-2027">
   <div class="kim-letter-header">
     <div class="kim-letter-sender">
@@ -33,11 +33,11 @@ const sampleLetter=String.raw\`<h3>Шаблон уведомления для с
   <p class="kim-letter-signoff">С уважением,</p>
   <p class="kim-letter-signature">Директор&nbsp;&nbsp;&nbsp;&nbsp;Н.А. Чистова</p>
 </div>
-<p class="kim-demo-tip"><strong>Важно:</strong> шапка, тема и текст повторяют макет образца КИМ. Поля в кавычках вставляют средствами Word: «Рассылки» → «Вставить поле слияния».</p>\`;
-const sliderExample=String.raw\`<figure class="slider-example-figure">
+<p class="kim-demo-tip"><strong>Важно:</strong> шапка, тема и текст повторяют макет образца КИМ. Поля в кавычках вставляют средствами Word: «Рассылки» → «Вставить поле слияния».</p>`;
+const sliderExample=String.raw`<figure class="slider-example-figure">
   <img src="slider-example.svg?v=20261108-3" alt="Учебный образец мобильного слайдера: три изображения 120 на 90 пикселей, закруглённые углы 10 пикселей и стрелки слева и справа" loading="eager">
   <figcaption><strong>Учебный пример слайдера.</strong> На демонстрационном экзамене этот образец не предоставляется. Студент самостоятельно подбирает изображения и создаёт собственный макет.</figcaption>
-</figure>\`;
+</figure>`;
 let updated=0;
 for(const variant of data){
   if(variant.number<39||variant.number>48||typeof variant.html!=='string')continue;
