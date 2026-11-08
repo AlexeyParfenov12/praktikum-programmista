@@ -21,8 +21,50 @@ function nav(name,label,glyph){return `<button data-nav="${name}" class="${view=
 function shell(main){app.innerHTML=`<div class="shell"><aside class="sidebar"><div class="brand"><div class="brand-icon">ДЭ</div><div>Практика ДЭ<small>09.01.03 · КИМ 2027</small></div></div><div><div class="side-label">Навигация</div><nav class="nav">${nav('catalog','Варианты','▦')}${nav('journal','Журнал','▤')}${nav('analytics','Аналитика','◫')}${nav('settings','Настройки','⚙')}</nav></div><div class="side-foot">48 учебных вариантов.<br>Прогресс хранится только в браузере преподавателя.</div></aside><main class="main">${main}</main></div>`;app.querySelectorAll('[data-nav]').forEach(b=>b.addEventListener('click',()=>{view=b.dataset.nav;selectedVariant=null;render()}))}
 function pageHeader(label,title,sub,actions=''){return `<div class="page-top"><div><div class="eyebrow">${label}</div><h1 class="h1">${title}</h1>${sub?`<p class="subtitle">${sub}</p>`:''}</div>${actions?`<div class="row wrap">${actions}</div>`:''}</div>`}
 function render(){document.title=(selectedVariant&&view==='catalog'?'Вариант '+selectedVariant+' · ':'')+'Практика ДЭ · журнал';if(view==='catalog')renderCatalog();else if(view==='journal')renderJournal();else if(view==='analytics')renderAnalytics();else renderSettings()}
+
+/* Варианты 39–48. Шаблон слияния повторяет макет «Образец Слияние_ОЗ.pdf».
+   Журнал и списки студентов не изменяются. */
+function kimMailPreview(html,variantNumber){
+  if(variantNumber<39||variantNumber>48)return html;
+  const token='<h3>Шаблон письма — расположение и текст как в «Образец Слияние_ОЗ.pdf»</h3>';
+  const start=html.indexOf(token);
+  if(start<0)return html;
+  const close='</table></div>';
+  const end=html.indexOf(close,start+token.length);
+  if(end<0)return html;
+  const example=[
+    '<h3>Шаблон уведомления — по оригинальному образцу КИМ-2027</h3>',
+    '<div class="kim-letter" aria-label="Образец письма по КИМ">',
+      '<div class="kim-letter-header">',
+        '<div class="kim-letter-sender">',
+          'Санкт-Петербургский<br>государственный университет<br>телекоммуникаций им. проф.<br>М.А. Бонч-Бруевича «СПбГУТ»<br>',
+          'наб. реки Мойки, д. 61 ЛИТЕР А,<br>Санкт-Петербург, 191186<br>',
+          'тел. (812) 326-31-63, факс: (812) 326-31-59<br>',
+          'р/сч 40501810300002000001 «Сбербанк»<br>',
+          'ОКТМО 40909000000<br>',
+          'ОКПО 01179934 ОГРН 1027809197635<br>',
+          'ИНН/КПП 7808004760/784001001<br>',
+          '15.11.21 № 15-02/21<br>',
+          'На №___________ от ___________',
+        '</div>',
+        '<div class="kim-letter-recipient"><div>',
+          '«Должность»<br>«Организация»<br>«Инициалы_Фамилия»<br>«Адрес_1»',
+        '</div></div>',
+      '</div>',
+      '<div class="kim-letter-subject">Об участии в конференции</div>',
+      '<div class="kim-letter-greeting">«Обращение» <span class="kim-letter-underline">«Имя» «Отчество»</span>!</div>',
+      '<div class="kim-letter-hint">(в оригинале: «Уважаемый _____!», муж. «Имя» «Отчество»!)</div>',
+      '<p>Предлагаем Вам принять участие в конференции.</p>',
+      '<p>Надеемся на ваше согласие в ближайшее время.</p>',
+      '<p class="kim-letter-signoff">С уважением,</p>',
+      '<p class="kim-letter-signature">Директор&nbsp;&nbsp;&nbsp;&nbsp;Н.А. Чистова</p>',
+    '</div>'
+  ].join('');
+  return html.slice(0,start)+example+html.slice(end+close.length);
+}
+
 function renderCatalog(){if(selectedVariant){const d=byNum.get(selectedVariant);let html=pageHeader('Каталог / Вариант '+d.number,`Вариант №${d.number}`,escape(d.title),`<button class="btn" id="printV">⎙ Печать / PDF</button><button class="btn primary" id="backV">Все варианты</button>`);
- html+=`<div class="panel-grid"><article class="card"><div class="task-meta"><span class="chip">${d.parts} ${d.parts===1?'часть':d.parts<5?'части':'частей'}</span>${d.generated?'<span class="chip muted">Дополнительный учебный вариант</span>':''}</div><div class="task-content">${d.html}</div></article><aside><div class="side-panel"><b>Структура варианта</b><p>${Array.from({length:d.parts},(_,i)=>`${i+1}. ${escape(PARTS[i])}`).join('<br>')}</p><p>Сохраните выполненные файлы в папку с нужным именем. Если показатели в тренажёре отличаются от КИМ на экзамене, приоритет имеет выданное задание.</p></div></aside></div>`;shell(html);$('backV').onclick=()=>{selectedVariant=null;render()};$('printV').onclick=()=>window.print();return}
+ html+=`<div class="panel-grid"><article class="card"><div class="task-meta"><span class="chip">${d.parts} ${d.parts===1?'часть':d.parts<5?'части':'частей'}</span>${d.generated?'<span class="chip muted">Дополнительный учебный вариант</span>':''}</div><div class="task-content">${kimMailPreview(d.html,d.number)}</div></article><aside><div class="side-panel"><b>Структура варианта</b><p>${Array.from({length:d.parts},(_,i)=>`${i+1}. ${escape(PARTS[i])}`).join('<br>')}</p><p>Сохраните выполненные файлы в папку с нужным именем. Если показатели в тренажёре отличаются от КИМ на экзамене, приоритет имеет выданное задание.</p></div></aside></div>`;shell(html);$('backV').onclick=()=>{selectedVariant=null;render()};$('printV').onclick=()=>window.print();return}
  const visible=V.filter(v=>{let f=filter==='all'||(filter==='word'&&v.parts===1)||(filter==='merge'&&v.parts===2)||(filter==='ppt'&&v.parts===3)||(filter==='slider'&&v.parts===4);return f&&(!search||String(v.number).includes(search)||v.title.toLowerCase().includes(search.toLowerCase()))});
  let out=pageHeader('Библиотека заданий','Каталог вариантов','Подборка учебных работ №1–48 с постепенным расширением навыков: Word, рассылка, презентации и мобильный слайдер.');
  out+=`<section class="card hero"><div><div class="eyebrow" style="color:#a2c9bb">Подготовка к демонстрационному экзамену</div><h2>От первого документа<br>до комплексного задания</h2><p>Изучайте варианты, а выполнение отмечайте в преподавательском журнале. Все задания доступны для просмотра и печати.</p></div><div class="number">48</div></section>`;
